@@ -7,9 +7,9 @@ php:
 
 env:
     - WP_VERSION=master WP_MULTISITE=0
+    - WP_VERSION=master WP_MULTISITE=1
 
 before_script:
-    - WP_TESTS_DIR=/tmp/wordpress-tests/
     - svn export http://develop.svn.wordpress.org/trunk/ /tmp/wordpress-tests
     - cp /tmp/wordpress-tests/wp-tests-config-sample.php /tmp/wordpress-tests/wp-tests-config.php
     - sed -i "s/youremptytestdbnamehere/wordpress_test/" /tmp/wordpress-tests/wp-tests-config.php

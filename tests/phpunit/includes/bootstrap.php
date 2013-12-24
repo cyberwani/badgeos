@@ -51,7 +51,8 @@ $GLOBALS['wp_tests_options'] = array(
  * Run custom functionality after mu-plugins are loaded.
  */
 function _tests_load_badgeos() {
-	require dirname( dirname( dirname( dirname( __FILE__ ) ) ) ) . '/badgeos.php';
+	define( 'BOS_DIRECTORY_PATH', trailingslashit( dirname( dirname( dirname( dirname( __FILE__ ) ) ) ) ) );
+	require BOS_DIRECTORY_PATH . 'badgeos.php';
 }
 tests_add_filter( 'muplugins_loaded', '_tests_load_badgeos' );
 
