@@ -10,14 +10,11 @@ env:
 
 before_script:
     - mkdir -p tmp
-    - WP_CORE_DIR=tmp/wordpress/src/
-    - WP_TESTS_DIR=tmp/wordpress/tests/
-    - svn co http://develop.svn.wordpress.org/trunk tmp/wordpress/
-    - cp tmp/wordpress/tests/wp-tests-config-sample.php tmp/wordpress/tests/wp-tests-config.php
-    - sed -i "s:dirname( __FILE__ ) . '/wordpress/':'$WP_CORE_DIR':" tmp/wordpress/tests/wp-tests-config.php
-    - sed -i "s/yourdbnamehere/wordpress_test/" tmp/wordpress/tests/wp-tests-config.php
-    - sed -i "s/yourusernamehere/root/" tmp/wordpress/tests/wp-tests-config.php
-    - sed -i "s/yourpasswordhere//" tmp/wordpress/tests/wp-tests-config.php
+    - svn co http://develop.svn.wordpress.org/trunk tmp/wordpress-tests/
+    - cp tmp/wordpress-tests/wp-tests-config-sample.php tmp/wordpress-tests/wp-tests-config.php
+    - sed -i "s/youremptytestdbnamehere/wordpress_test/" tmp/wordpress-tests/wp-tests-config.php
+    - sed -i "s/yourusernamehere/root/" tmp/wordpress-tests/wp-tests-config.php
+    - sed -i "s/yourpasswordhere//" tmp/wordpress-tests/wp-tests-config.php
     - mysql -e 'CREATE DATABASE wordpress_test;' -uroot
 
 script:
