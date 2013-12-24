@@ -18,7 +18,7 @@ before_script:
     - mysql -e 'CREATE DATABASE wordpress_test;' -uroot
 
 script:
-    - phpunit
+    - phpunit -c phpunit.xml
 
 notifications:
     notifications:
