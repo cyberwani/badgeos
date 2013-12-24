@@ -1,7 +1,5 @@
 # BadgeOS Test Suite [![Build Status](https://secure.travis-ci.org/opencredit/badgeos.png?branch=master)](http://travis-ci.org/opencredit/badgeos) [![Coverage Status](https://coveralls.io/repos/opencredit/badgeos/badge.png)](https://coveralls.io/r/opencredit/badgeos) #
 
-Version: 1.1
-
 -------------------------
 
 The BadgeOS Test Suite uses PHPUnit to help us maintain the best possible code quality.
@@ -18,15 +16,15 @@ Quick Start (For Manual Runs)
     git clone git://github.com/opencredit/badgeos.git
     cd BadgeOS
 
-    # Download the core WordPress Testing Suite
-	svn co --ignore-externals http://unit-tests.svn.wordpress.org/trunk/ tests/vendor/wordpress-tests
+    # Download the WordPress Testing Suite
+	svn co --ignore-externals http://unit-tests.svn.wordpress.org/trunk/ /tmp/wordpress-tests
 
     # Copy and edit the WordPress Unit Tests Configuration
-    cp tests/phpunit/includes/unittests-config.travis.php tests/vendor/wordpress-tests/unittests-config.php
+    cp tests/phpunit/includes/unittests-config.travis.php /tmp/wordpress-tests/wp-tests-config.php
 
-Now edit `unittests-config.php` in a code editor. Make sure to have an empty database ready (all data will die) and double-check that your path to WordPress is correct.
+Now edit `wp-tests-config.php` in a code editor. Make sure to have an empty database ready (all data will die) and double-check that your path to WordPress is correct.
 
-BadgeOS does not necessarily need to be in the `wp-content/plugins` directory. For example in Travis-CI's `.travis.yml` we copy WordPress into `vendor/wordpress`
+BadgeOS does not need to be in the `wp-content/plugins` directory. For example in Travis-CI's `.travis.yml` we copy WordPress into `tmp/wordpress`
 
     <?php
 
@@ -36,7 +34,7 @@ BadgeOS does not necessarily need to be in the `wp-content/plugins` directory. F
     define( 'DB_USER', 'user' );
     define( 'DB_PASSWORD', 'password' );
 
-    # .. more you probably don't need to edit
+    # ...
 
 Load up the Terminal and cd into the directory where BadgeOS is stored and run this command:
 
@@ -51,5 +49,4 @@ Please note: MySQL will need to be running otherwise the unit tests will fail an
 * Coveralls.io (automated code coverage): https://coveralls.io/r/opencredit/badgeos/
 
 Other Supported (manually run):
-* PHPCI: http://www.phptesting.org/
 * PHPUnit: http://phpunit.de/manual/current/en/index.html
