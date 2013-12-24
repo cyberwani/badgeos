@@ -23,11 +23,6 @@ before_script:
 script:
     - phpunit
 
-branches:
-  only:
-    - master
-    - alpha
-
 notifications:
     notifications:
         hipchat:
