@@ -155,7 +155,7 @@ function badgeos_achievements_list_shortcode( $atts = array () ){
 
 				$badges .= 'Filter: <select name="achievements_list_filter" id="achievements_list_filter">';
 
-					$badges .= '<option value="all">All '.$post_type_plural;
+					$badges .= '<option value="all">' . __( 'All ', 'badgeos' ) . $post_type_plural;
 					// If logged in
 					if ( $user_ID >0 ) {
 						$badges .= '<option value="completed">' . __( 'Completed ', 'badgeos' ) . $post_type_plural;
