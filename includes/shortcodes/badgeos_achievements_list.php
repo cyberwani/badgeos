@@ -158,8 +158,8 @@ function badgeos_achievements_list_shortcode( $atts = array () ){
 					$badges .= '<option value="all">All '.$post_type_plural;
 					// If logged in
 					if ( $user_ID >0 ) {
-						$badges .= '<option value="completed">Completed '.$post_type_plural;
-						$badges .= '<option value="not-completed">Not Completed '.$post_type_plural;
+						$badges .= '<option value="completed">' . __( 'Completed ', 'badgeos' ) . $post_type_plural;
+						$badges .= '<option value="not-completed">' . __( 'Not Completed ', 'badgeos' ) .$post_type_plural;
 					}
 					// TODO: if show_points is true "Badges by Points"
 					// TODO: if dev adds a custom taxonomy to this post type then load all of the terms to filter by
@@ -177,7 +177,7 @@ function badgeos_achievements_list_shortcode( $atts = array () ){
 			$badges .= '<div id="badgeos-achievements-search">';
 				$badges .= '<form id="achievements_list_search_go_form" action="'. get_permalink( get_the_ID() ) .'" method="post">';
 				$badges .= 'Search: <input type="text" id="achievements_list_search" name="achievements_list_search" value="'. $search .'">';
-				$badges .= '<input type="submit" id="achievements_list_search_go" name="achievements_list_search_go" value="Go">';
+				$badges .= '<input type="submit" id="achievements_list_search_go" name="achievements_list_search_go" value="' . esc_attr__( 'Go', 'badgeos' ) . '">';
 				$badges .= '</form>';
 			$badges .= '</div>';
 
@@ -191,7 +191,7 @@ function badgeos_achievements_list_shortcode( $atts = array () ){
 	// Hidden fields and Load More button
 	$badges .= '<input type="hidden" id="badgeos_achievements_offset" value="0">';
 	$badges .= '<input type="hidden" id="badgeos_achievements_count" value="0">';
-	$badges .= '<input type="button" id="achievements_list_load_more" value="Load More" style="display:none;">';
+	$badges .= '<input type="button" id="achievements_list_load_more" value="' . esc_attr__( 'Load More', 'badgeos' ) . '" style="display:none;">';
 	$badges .= '<div class="badgeos-spinner"></div>';
 
 	// Reset Post Data
